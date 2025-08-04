@@ -6,6 +6,7 @@ This artifact accompanies our MICRO '25 paper "Swift and Trustworthy Large-Scale
 
 ## Prerequisites
 
+- `zlib`
 - `pip`
 - Nsight Systems CLI and Nsight Compute CLI  
   - Install [Nsight Systems here](https://docs.nvidia.com/nsight-systems/InstallationGuide/index.html)
@@ -40,10 +41,11 @@ uv venv
 git submodule update --init --recursive
 
 # Build MacSim
+cd macsim
 uv run ./build.py --ramulator -j32
 
 # Compile Rodinia
-cd workloads/rodinia/gpu-rodinia
+cd ../workloads/rodinia/gpu-rodinia
 make
 cd -
 
