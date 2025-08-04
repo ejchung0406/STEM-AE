@@ -46,6 +46,7 @@ uv run ./build.py --ramulator -j32
 
 # Compile Rodinia
 cd ../workloads/rodinia/gpu-rodinia
+mkdir -p bin/linux/cuda
 make
 cd -
 
