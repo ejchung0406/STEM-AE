@@ -36,9 +36,9 @@ cd -
 
 # Download rodinia data
 cd workloads/rodinia
-gdown 
+gdown ???
 tar -xvf rodinia-data.tar.gz
-rm  rodinia-data.tar.gz
+rm rodinia-data.tar.gz
 
 # Build Macsim
 cd macsim
