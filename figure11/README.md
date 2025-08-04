@@ -12,19 +12,19 @@ TODO
 
 ## Contents
 
-- `sweep.py` - script for drawing figure 11.
+- `sweep.py` - Script for drawing figure 11.
 
 - `1_kernel_sample.sh` - Script for collecting the result.
-- `2_create_figure11.sh` - script for drawing figure 11.
+- `2_create_figure11.sh` - Script for drawing figure 11.
 
 ---
 
 ## Reproducing the Figure
 
-### 1. run 
+### 1. Run 
 
-run `./1_kernel_sample.sh` to obtain the results. the results are stored in `figure11/results/stem-casio-sweep.csv`
+Run `./1_kernel_sample.sh` to obtain the results. The results are stored in `figure11/results/stem-casio-sweep.csv`.
 
-### 2. draw the figure
+### 2. Draw the figure
 
-run `./2_create_figure11.sh` to draw the figure 11. the process of gathering values from the aformentioned csv file to this plot drawing script is not automted so the script already has the values hard coded in `sweep.py`. 
+Run `./2_create_figure11.sh` to draw figure 11. The process of gathering values from the aforementioned CSV file to this plot drawing script is not automated so the script already has the values hard coded in `sweep.py`. 

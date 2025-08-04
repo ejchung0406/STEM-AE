@@ -12,8 +12,8 @@ Scatter plot showing the speedup (log scale) and error (%) of different kernel s
 
 ## Contents
 
-- `scatter.py` - script for drawing the scatterplot. 
-- `scatter.csv`, `scatter-hugging.csv` - speedup, error values we obtained from kernel sampling
+- `scatter.py` - Script for drawing the scatterplot. 
+- `scatter.csv`, `scatter-hugging.csv` - Speedup, error values we obtained from kernel sampling.
 
 - `1_create_figure9.sh` - Script for drawing the scatterplot. 
 
@@ -21,13 +21,13 @@ Scatter plot showing the speedup (log scale) and error (%) of different kernel s
 
 ## Reproducing the Figure
 
-### 1. (optional) obtain speedup and error
+### 1. (Optional) Obtain speedup and error
 
-we first have to collect the speedup and error values of kernel sampling from CASIO and Huggingface workloads. this can be done with using the scripts that we used in `../figure7/` and collecting them in a csv file. however, as this process is not automated. we included the csv file that we used. the value for CASIO is named `scatter.csv` and for huggingface is `scatter-hugging.csv`. 
+We first have to collect the speedup and error values of kernel sampling from CASIO and Huggingface workloads. This can be done with using the scripts that we used in `../figure7/` and collecting them in a CSV file. However, as this process is not automated, we included the CSV file that we used. The value for CASIO is named `scatter.csv` and for Huggingface is `scatter-hugging.csv`. 
 
-### 2. draw the scatterplot
+### 2. Draw the scatterplot
 
-we can use the two aformentioned csv files to draw the scatter by simply running the command `./1_create_figure9.sh`
+We can use the two aforementioned CSV files to draw the scatter plot by simply running the command `./1_create_figure9.sh`.
 
 
 

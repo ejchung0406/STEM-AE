@@ -1,65 +1,54 @@
-# MICRO '25 Artifact evaluation for the paper "Swift and Trustworthy Large-Scale GPU Simulation"
+# MICRO '25 Artifact Evaluation for the Paper "Swift and Trustworthy Large-Scale GPU Simulation"
 
 ## Abstract
 
 This artifact accompanies our MICRO ’25 paper.
 
-goal: demonstrates key results from the paper, including figure 1. 
+Goal: replicate key results from the paper — Figures 1, 7–12 and Tables 3, 4.
 
 ## Prerequisites
 
-- pip 
-- nsight systems cli, nsight compute cli
-  - Use [this](https://docs.nvidia.com/nsight-systems/InstallationGuide/index.html) install the nsight systems. 
-- Nvidia GPU with driver supporting cuda 12.4 or higher
+- `pip`
+- Nsight Systems CLI and Nsight Compute CLI  
+  - Install [Nsight Systems here](https://docs.nvidia.com/nsight-systems/InstallationGuide/index.html)
+- NVIDIA GPU with driver supporting CUDA 12.4 or higher
 
 ## Quick Start
 
 ```bash
-
 # Install uv
 pip install uv
 
 # Download dependencies
 uv venv
 
-# Install macsim and casio
+# Initialize submodules
 git submodule update --init --recursive
 
-# build macsim
+# Build MacSim
 uv run ./build.py --ramulator -j32
 
-# Compile rodinia
+# Compile Rodinia
 cd workloads/rodinia/gpu-rodinia
 make
 cd -
 
-# Download rodinia data
+# Download Rodinia data
 cd workloads/rodinia
 gdown ???
 tar -xvf rodinia-data.tar.gz
 rm rodinia-data.tar.gz
 
-# Build Macsim
-cd macsim
-uv run ./build.py --ramulator -j32
-
-# Build NVBit tool for Photon's kernel profiler, Macsim tracer, and Sieve's instruction counter.
+# Build NVBit tools
 cd nvbit/photon
 make
 cd ../macsim-tracer
-make 
+make
 cd ../instr_count_bb
 make
 cd ../..
-
-# fix error in casio
-open /fast_data/echung67/casio/rnnt/melfbank.py. in line 124, add `return_complex=True` and at the next line add `x = torch.view_as_real(x)`. 
-
-```
-
-The container includes PyTorch, matplotlib, and NVIDIA Nsight Systems for GPU profiling.
-
-## Contents
-
-there are each directory for each figures that this repo reproduce, and readme files for each figure are in each directory. 
+``` 
+### Temporary fix for Casio
+Edit `/fast_data/echung67/casio/rnnt/melfbank.py`
+Line 124: add `return_complex=True`
+Next line: add `x = torch.view_as_real(x)`

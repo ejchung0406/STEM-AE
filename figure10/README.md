@@ -12,8 +12,8 @@ Distribution of execution times for kernels grouped as "identical" by previous s
 
 ## Contents
 
-- `prevworks.py` - script for drawing the histograms. 
-- `prevworks.csv` - kernel execution time data from each cluster of sampling methods
+- `prevworks.py` - Script for drawing the histograms. 
+- `prevworks.csv` - Kernel execution time data from each cluster of sampling methods.
 
 - `1_create_figure10.sh` - Script for drawing the scatterplot. 
 
@@ -21,15 +21,15 @@ Distribution of execution times for kernels grouped as "identical" by previous s
 
 ## Reproducing the Figure
 
-### 1. (optional) obtain execution time data for kernel clusters
+### 1. (Optional) Obtain execution time data for kernel clusters
 
-we first have to collect execution time data for kernels that are considered to be in a same cluster by prior kernel sampling methods. this is possible by using the `export_for_figures` flag in python scripts, such as using the `debug_pka()` function in `figure7/sampling_methods/pka.py`. note that by using the command `uv run python -m figure7.sampling_methods.pka`, one can easily access the kernel ids in a certain cluster. 
+We first have to collect execution time data for kernels that are considered to be in the same cluster by prior kernel sampling methods. This is possible by using the `export_for_figures` flag in Python scripts, such as using the `debug_pka()` function in `figure7/sampling_methods/pka.py`. Note that by using the command `uv run python -m figure7.sampling_methods.pka`, one can easily access the kernel IDs in a certain cluster. 
 
-however, we found this process is not fully automated and is very burdensome to do for all workloads and sampling methods, so we provided a csv file of `prevworks.csv` that we used for drawing the figure in the paper. `prevworks.csv` contains kernel execution time data for 6 clusters that were used during the kernel sampling of Rodinia and CASIO workload suites. 
+However, we found this process is not fully automated and is very burdensome to do for all workloads and sampling methods, so we provided a CSV file of `prevworks.csv` that we used for drawing the figure in the paper. `prevworks.csv` contains kernel execution time data for 6 clusters that were used during the kernel sampling of Rodinia and CASIO workload suites.
 
-### 2. draw the scatterplot
+### 2. Draw the scatterplot
 
-we can use the aformentioned csv file to draw the histogram by running the command `./1_create_figure10.sh`
+We can use the aforementioned CSV file to draw the histogram by running the command `./1_create_figure10.sh`.
 
 
 
