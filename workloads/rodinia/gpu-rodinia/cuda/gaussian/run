@@ -1,0 +1,1 @@
+./gaussian -f ../../../rodinia-data/gaussian/matrix16.txt

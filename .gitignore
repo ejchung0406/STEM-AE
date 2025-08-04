@@ -26,6 +26,15 @@ workloads/rodinia/gpu-rodinia/bin/linux/cuda/*
 
 workloads/rodinia/rodinia-data
 
+workloads/rodinia/gpu-rodinia/data/*
+workloads/rodinia/gpu-rodinia/!data/.gitkeep
+
+workloads/rodinia/gpu-rodinia/*.o
+workloads/rodinia/gpu-rodinia/*.orig
+workloads/rodinia/gpu-rodinia/*.swp
+workloads/rodinia/gpu-rodinia/*.gch
+workloads/rodinia/gpu-rodinia/*.out
+
 ## STEM
 prev_work_repos
 results
