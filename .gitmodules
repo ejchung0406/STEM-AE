@@ -1,6 +1,6 @@
 [submodule "macsim"]
 	path = macsim
-	url = git@github.com:gthparch/macsim.git
+	url = https://github.com/gthparch/macsim.git
 [submodule "workloads/casio"]
 	path = workloads/casio
 	url = https://github.com/VerticalResearchGroup/casio.git
