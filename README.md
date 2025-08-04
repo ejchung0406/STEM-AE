@@ -48,17 +48,15 @@ uv run ./build.py --ramulator -j32
 cd ../workloads/rodinia/gpu-rodinia
 mkdir -p bin/linux/cuda
 make
-cd -
 
 # Download Rodinia data
-cd workloads/rodinia
-gdown 1wPapvsb14v3Nn5DMxb_vU3xjgiMR6pTa
+cd ..
+uv run gdown 1wPapvsb14v3Nn5DMxb_vU3xjgiMR6pTa
 tar -xvf rodinia-data.tar.gz
 rm rodinia-data.tar.gz
-cd -
 
 # Build NVBit tools
-cd nvbit/photon
+cd ../../nvbit/photon
 make
 cd ../macsim-tracer
 make
@@ -70,7 +68,7 @@ cd ../..
 ## Evaluation Workflow
 
 ### 1. Setup and Building (Required for all experiments)
-Follow the Quick Start instructions above to set up the environment and build necessary components.
+Follow the Quick Start instructions above to set up the environment and build the necessary components.
 
 ### 2. Figure Reproduction Guide
 
