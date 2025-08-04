@@ -6,7 +6,7 @@ This directory contains the necessary components to reproduce **Figure 12** and 
 
 ## Figure Description
 
-TODO
+Cycle count comparison between sampled and full simulation across GPU microarchitecture changes using various kernel sampling methods and workloads. This figure demonstrates STEM's effectiveness in cycle-level simulation environments by showing how different sampling techniques estimate total execution cycles when integrated with the MacSim simulator. The results validate STEM's accuracy for design space exploration scenarios where precise cycle counts are critical for architectural decisions.
 
 ---
 

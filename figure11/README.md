@@ -6,7 +6,7 @@ This directory contains the necessary components to reproduce **Figure 11** from
 
 ## Figure Description
 
-TODO
+Impact of varying the error bound (ε) on speedup and sampling error for STEM. This figure demonstrates STEM's parameter sensitivity by showing how larger ε values enhance speedup with increased error. The analysis validates STEM's robustness across different error bound settings, allowing users to tune the trade-off between simulation speed and accuracy according to their requirements.
 
 ---
 
