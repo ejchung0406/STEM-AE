@@ -21,10 +21,13 @@ Impact of varying the error bound (ε) on speedup and sampling error for STEM. T
 
 ## Reproducing the Figure
 
-### 1. Run 
+### 1. Run the Experiment
 
-Run `./1_kernel_sample.sh` to obtain the results. The results are stored in `figure11/results/stem-casio-sweep.csv`.
+Run `./1_kernel_sample.sh` to generate the results. The output will be saved to `figure11/results/stem-casio-sweep.csv`.
 
-### 2. Draw the figure
+### 2. Plot the Figure
 
-Run `./2_create_figure11.sh` to draw figure 11. The process of gathering values from the aforementioned CSV file to this plot drawing script is not automated so the script already has the values hard coded in `sweep.py`. 
+Run `./2_create_figure11.sh` to draw Figure 11.
+
+> **Note:** This script does **not** automatically extract values from the CSV file.  
+> The values are manually hardcoded in `sweep.py`.
