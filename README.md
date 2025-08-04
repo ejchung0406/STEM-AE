@@ -34,6 +34,12 @@ cd workloads/rodinia/gpu-rodinia
 make
 cd -
 
+# Download rodinia data
+cd workloads/rodinia
+gdown 
+tar -xvf rodinia-data.tar.gz
+rm  rodinia-data.tar.gz
+
 # Build Macsim
 cd macsim
 uv run ./build.py --ramulator -j32
