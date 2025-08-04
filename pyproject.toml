@@ -1,0 +1,16 @@
+[project]
+name = "stem-ae"
+version = "0.1.0"
+description = "AE for MICRO 2025"
+readme = "README.md"
+requires-python = "==3.9.*"
+dependencies = [
+  "numpy==1.26.4",
+  "torch",
+  "torchvision",
+  "torchaudio",
+  "matplotlib",
+  "librosa",
+  "pandas>=2.3.1",
+  "gdown>=5.2.0",
+]
