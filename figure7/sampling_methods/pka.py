@@ -70,11 +70,12 @@ def run_pka(suite_name:str, name:str, subdir:str, use_nsys_only: bool, print_sam
       min_error_i = i
 
       if export_for_figures:
+        os.makedirs("stem-figures", exist_ok=True)
         with open("stem-figures/pka.csv", mode="w", newline="") as file:
           rows_to_export = []
           for ii in range(min_error_i):
             subset = [data_nsys[idx][cols_nsys.index("Kernel Dur (ns)")] for idx in range(len(labels)) if labels[idx] == ii]
-            rows_to_export.append(["Cluster {ii}"] + subset)
+            rows_to_export.append([f"Cluster {ii}"] + subset)
           writer = csv.writer(file)
           writer.writerows(rows_to_export)
 
@@ -109,6 +110,7 @@ def debug_pka():
     name=name,
     subdir=subdir,
     use_nsys_only=False,
+    print_samples=False,
     export_for_figures=True,
   )
   return

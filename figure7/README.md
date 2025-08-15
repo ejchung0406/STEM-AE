@@ -39,6 +39,15 @@ The script above only runs through workloads in the Rodinia suite with small inp
 
 Run `3_kernel_sample.sh` to do kernel sampling using downloaded workload profiles. The results are stored in `results/` with each CSV file for Rodinia, CASIO, and Huggingface suites. How we use this CSV file to draw the figures is not automated. We take the average from each iteration and used matplotlib to draw the figures. The default script has iter=1 to save your time. If you want to run the full evaluation, set iter=10 for all suites in `kernel_sample.py` and average the results from each iteration. One iteration takes around 30 minutes to run.
 
-### 5. Gathering the timing information to fill in Table 5
+### 5. Measuring Profiling Overhead for Table 5
 
-`profile_workloads.py` has a feature where it can measure the time required for collecting each stat used for nsys, ncu, and nvbit tool for Photon. We used nvbit for measuring the time for Sieve and it requires using the `nvbit/instr_count_bb` tool for time measurement but it is not included here as ncu can already measure the instruction count.
+The overhead of each method and the associated profiler is calculated as the **time difference** between running a workload with and without its required profiler. We used the `figure7/profile_workloads.py` script to automate these measurements. The script executes each workload, captures the elapsed time via functions like `run_nsys()` and `run_ncu()`, and prints the raw timing data to standard output.
+
+The specific profiling tool used for each kernel sampling method is as follows:
+
+- **PKA**: NVIDIA's **Nsight Compute** (`ncu`) to collect 12 hardware performance metrics.
+- **Sieve**: The `instr_count_bb` tool from the **NVBit library** to count kernel instructions.
+- **Photon**: A custom-designed Basic Block Vector (BBV) extractor built on **NVBit**.
+- **STEM (Ours)**: NVIDIA's **Nsight Systems** (`nsys`).
+
+We collected the timing data from these scripts to obtain the data for Table 5. 
