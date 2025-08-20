@@ -160,7 +160,7 @@ def run_sieve(suite_name:str, name:str, subdir:str, use_nsys_only: bool, print_s
   if print_samples:
     total_samples.sort()
     print(f"Kernel sample IDs: {total_samples}")
-    with open(f"/fast_data/echung67/sandbox/llm-for-macsim/{name}-sieve.pkl", "wb") as f:
+    with open(f"{name}-sieve.pkl", "wb") as f:
       pickle.dump(total_samples, f)
 
   speedup = total_exe_time / total_sampled_exe_time

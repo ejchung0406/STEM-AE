@@ -108,10 +108,10 @@ Each figure directory contains:
 ### **CRITICAL: Required CASIO Fix**
 **This fix is MANDATORY and must be applied before running any CASIO workloads.**
 
-The CASIO benchmark suite uses a deprecated PyTorch function that will cause workloads to fail. You MUST edit `/fast_data/echung67/casio/rnnt/melfbank.py`:
+The CASIO benchmark suite uses a deprecated PyTorch function that will cause workloads to fail. You MUST edit `workloads/casio/rnnt/melfbank.py`:
 
 ```python
-# Line 124: Change this line to add return_complex=True parameter
+# Line 117-123: Add return_complex=True parameter in `torch.sfft()` function
 OLD: x = torch.sfft(...)  
 NEW: x = torch.sfft(..., return_complex=True)
 

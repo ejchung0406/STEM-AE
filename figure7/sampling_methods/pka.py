@@ -86,7 +86,7 @@ def run_pka(suite_name:str, name:str, subdir:str, use_nsys_only: bool, print_sam
   if print_samples:
     total_samples.sort()
     print(f"Kernel sample IDs: {total_samples}")
-    with open(f"/fast_data/echung67/sandbox/llm-for-macsim/{name}-pka.pkl", "wb") as f:
+    with open(f"{name}-pka.pkl", "wb") as f:
       pickle.dump(total_samples, f)
   
   return min_speedup, min_error, min_error_i

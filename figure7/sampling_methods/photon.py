@@ -104,7 +104,7 @@ def run_photon(suite_name: str, name: str, subdir: str, use_nsys_only: bool=Fals
   if print_samples:
     total_samples.sort()
     print(f"Kernel sample IDs: {total_samples}")
-    with open(f"/fast_data/echung67/sandbox/llm-for-macsim/{name}-photon.pkl", "wb") as f:
+    with open(f"{name}-photon.pkl", "wb") as f:
       pickle.dump(total_samples, f)
   print("==============================")
 

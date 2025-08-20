@@ -156,7 +156,7 @@ def parse_stem(suite_name: str, name: str, subdir: str, error_bound: float,
     if print_samples:
       total_samples.sort()
       print(f"Kernel sample IDs: {total_samples}")
-      with open(f"/fast_data/echung67/sandbox/llm-for-macsim/{name}-stem.pkl", "wb") as f:
+      with open(f"{name}-stem.pkl", "wb") as f:
         pickle.dump(total_samples, f)
     print("==============================")
 
@@ -262,7 +262,7 @@ def parse_stem_diff_hw(suite_name: str, name: str, subdir: str, error_bound: flo
     if print_samples:
       total_samples.sort()
       print(f"Kernel sample IDs: {total_samples}")
-      with open(f"/fast_data/echung67/sandbox/llm-for-macsim/{name}.pkl", "wb") as f:
+      with open(f"{name}-stem.pkl", "wb") as f:
         pickle.dump(total_samples, f)
     print("==============================")
 
