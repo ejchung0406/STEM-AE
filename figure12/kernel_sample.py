@@ -63,11 +63,13 @@ def sample(iter=10):
           results.append((method, work, config, predicted_total_cycles, sum(num_of_cycles), error * 100))
 
   # Save results to a CSV file
-  with open('results.csv', 'w', newline='') as csvfile:
+  with open('results.csv', 'a', newline='') as csvfile:
     fieldnames = ['Sampling method', 'Workload', 'Config', 'Predicted #cycles', 'Total #cycles', 'Error (%)']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
-    writer.writeheader()
+    # Write the header only if the file is new
+    if csvfile.tell() == 0:
+      writer.writeheader()
     for method, work, config, pred, total, error in results:
       writer.writerow({'Sampling method': method, 'Workload': work, 'Config': config, 'Predicted #cycles': pred, 'Total #cycles': total, 'Error (%)': error})
 

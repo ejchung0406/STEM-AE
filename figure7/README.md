@@ -51,3 +51,17 @@ The specific profiling tool used for each kernel sampling method is as follows:
 - **STEM (Ours)**: NVIDIA's **Nsight Systems** (`nsys`).
 
 We collected the timing data from these scripts to obtain the data for Table 5. 
+
+---
+
+### Discrepancies with the Original Paper
+#### Randomness Involved
+Please note that the data obtained from the AE code may differ slightly from the results shown in the paper. This is because many of the evaluated kernel sampling methods involve randomness, and our AE code only runs a single iteration with default settings. You can modify this by changing the function arguments where `iter=1`. Even without this change, however, you should still observe trends consistent with those shown in the paper.
+#### PKA and Sieve Sampling Methods on Some Rodinia Workloads
+As noted in Section 8 of the paper, for the _gaussian_ and _heartwall_ workloads, we manually tuned previous methods (PKA and Sieve) to sample kernels randomly instead of always selecting the first chronological kernel, as this yielded better performance. We did this to ensure our method was compared against the best possible versions of prior methods, even if that required additional fine-tuning. However, this tuning is not implemented in our AE code, so PKA and Sieve may show larger errors on these workloads compared to what is reported in the paper.
+#### Sieve Sampling Method on CASIO Workloads
+Please also note that a naïve implementation of Sieve (one of the previous methods) shows very poor speedup on CASIO workloads. This is also stated on page 9 of the original paper:
+
+> For CASIO workloads, we disabled Sieve’s additional clustering using KDE (kernel density estimation), as it led to oversampling and limited speedups to below 2–5× on each workload.
+
+In the provided `.xlsx` file, the Sieve data is generated with KDE clustering enabled, as this is the default setting in our AE code. To obtain speedup and error numbers closer to those in the paper, you should disable KDE clustering only for CASIO workloads. To do this, please edit `figure7/sampling_methods/sieve.py` by uncommenting line 82 and commenting out lines 83–97.
