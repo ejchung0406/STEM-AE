@@ -19,6 +19,8 @@ Speedup comparison of four kernel sampling methods on the Rodinia and CASIO benc
 - `2_download_profiles.sh` - Script for downloading and extracting the profiles. 
 - `3_kernel_sample.sh` - Script for running kernel sampling.
 
+- `figure7.xlsx` - MS Excel project file for generating the plots with result csv files. This generates similar plots as Figure 7 and 8 on the original paper. 
+
 ---
 
 ## Reproducing the Figure

@@ -19,6 +19,8 @@ Cycle count comparison between sampled and full simulation across GPU microarchi
 - `1_trace.sh` - Script for downloading macsim traces.
 - `2_run_macsim.sh` - Copy macsim binary to each directory and run macsim in parallel for each workload.
 - `3_kernel_sample.sh` - Using the macsim output, estimate the total number of cycles with each kernel sampling technique.
+
+- `figure12.xlsx` - MS Excel project file for generating the plots with result csv files. This generates similar plots as Figure 12 on the original paper, but only with a subset of workloads due to trace size overhead. 
 ---
 
 ## Reproducing the Figure
