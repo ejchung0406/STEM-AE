@@ -112,8 +112,8 @@ The CASIO benchmark suite uses a deprecated PyTorch function that will cause wor
 
 ```python
 # Line 117-123: Add return_complex=True parameter in `torch.sfft()` function
-OLD: x = torch.sfft(...)  
-NEW: x = torch.sfft(..., return_complex=True)
+OLD: x = torch.stft(...)  
+NEW: x = torch.stft(..., return_complex=True)
 
 # Line 125: Add this new line immediately after
 x = torch.view_as_real(x)
