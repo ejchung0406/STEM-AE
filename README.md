@@ -51,6 +51,7 @@ make
 
 # Download Rodinia data
 cd ..
+mkdir rodinia-data && cd rodinia-data
 uv run gdown 1wPapvsb14v3Nn5DMxb_vU3xjgiMR6pTa
 tar -xvf rodinia-data.tar.gz
 rm rodinia-data.tar.gz
